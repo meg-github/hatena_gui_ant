@@ -33,13 +33,13 @@ st.markdown(markdown)
 st.subheader("タスク画面の説明")
 st.write("タブ：「タスク1」「タスク2」を開くと、以下のような画面が表示されます。"
 "画面の構成は以下のようになっています。")
-image = Image.open('https://github.com/meg-github/hatena_gui_ant/tree/main/ant/fig_exp2.png')
+image = Image.open('https://github.com/meg-github/hatena_gui_ant/blob/main/ant/fig_exp2.png')
 st.image(image, caption='画面構成',use_column_width="auto")
 "①：ニュース記事のタイトルです。クリックすることで記事内容を確認することができます。"
 "②：ニュース記事の本文です。記事内容をお読みいただいた上で質問に回答してください。"
 "③：ニュース記事につけられたコメントの一覧です。コメントは10件ずつ表示されています。左下の「＜」「＞」ボタンで11件目以降のコメントを見ることができます。"
 
-image2 = Image.open('https://github.com/meg-github/hatena_gui_ant/tree/main/ant/fig_exp3.png')
+image2 = Image.open('https://github.com/meg-github/hatena_gui_ant/blob/main/ant/fig_exp3.png')
 st.image(image2, caption='投稿者の過去コメント参照時',use_column_width="auto")
 
 "コメントの左側にあるチェックボックスをチェックすると、コメントを投稿したユーザーが過去に投稿したコメントと、過去に投稿されたコメントの感情的な傾向を確認することができます(表示されるまで少し時間がかかります)。気になるコメントについて適宜確認し、質問回答の際の参考にしてください。"
