@@ -8,9 +8,9 @@ from st_aggrid.grid_options_builder import GridOptionsBuilder
 import pickle
 import collections
 # # 外部pyファイル
-from ..functions import scrape_user_comment
-from ..functions import analyze_user
-from ..functions import analyze_bookmark_janome
+from .functions import scrape_user_comment
+from .functions import analyze_user
+from .functions import analyze_bookmark_janome
 
 
 
