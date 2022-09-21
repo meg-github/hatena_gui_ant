@@ -39,7 +39,7 @@ st.image("https://raw.githubusercontent.com/meg-github/hatena_gui_ant/main/ant/f
 "③：ニュース記事につけられたコメントの一覧です。コメントは10件ずつ表示されています。左下の「＜」「＞」ボタンで11件目以降のコメントを見ることができます。"
 
 
-st.image("https://raw.githubusercontent.com/meg-github/hatena_gui_ant/main/and/fig_exp3.png", caption='投稿者の過去コメント参照時',use_column_width="auto")
+st.image("https://raw.githubusercontent.com/meg-github/hatena_gui_ant/main/ant/fig_exp3.png", caption='投稿者の過去コメント参照時',use_column_width="auto")
 
 "コメントの左側にあるチェックボックスをチェックすると、コメントを投稿したユーザーが過去に投稿したコメントと、過去に投稿されたコメントの感情的な傾向を確認することができます(表示されるまで少し時間がかかります)。気になるコメントについて適宜確認し、質問回答の際の参考にしてください。"
 
