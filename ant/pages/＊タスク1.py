@@ -10,7 +10,7 @@ import pickle
 sys.path.append('../functions/')
 import scrape_user_comment
 import analyze_user
-import analyze_text_janome
+import analyze_bookmark_janome
 import collections
 
 # --------functions---------
