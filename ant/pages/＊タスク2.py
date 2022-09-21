@@ -7,7 +7,7 @@ from st_aggrid import AgGrid, DataReturnMode, GridUpdateMode
 from st_aggrid.grid_options_builder import GridOptionsBuilder
 import pickle
 # # 外部pyファイル
-sys.path.append('../functions/')
+sys.path.append('https://github.com/meg-github/hatena_gui_ant/tree/main/functions/')
 import scrape_user_comment
 import analyze_user
 import analyze_bookmark_janome
@@ -18,7 +18,7 @@ import collections
 def func_user_analysis(username):
 	scrape_user_comment.scrape(username,3)#コメントのスクレイピング
 	comments_user = analyze_user.analyze_usr(username)#感情値の算出
-	df_user = pd.read_table('../result/'+username, names=["id","url","title","comment"],usecols=["title","comment"])
+	df_user = pd.read_table('https://github.com/meg-github/hatena_gui_ant/tree/main/result/'+username, names=["id","url","title","comment"],usecols=["title","comment"])
 	# 各列の幅を'px'や'em'単位で微調整する
 	gridoptions = func_aggrids_user(df_user)
 	table = AgGrid(df_user,	gridOptions=gridoptions,fit_columns_on_grid_load=True)

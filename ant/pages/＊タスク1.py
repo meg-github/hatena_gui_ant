@@ -7,7 +7,7 @@ from st_aggrid import AgGrid, DataReturnMode, GridUpdateMode
 from st_aggrid.grid_options_builder import GridOptionsBuilder
 import pickle
 # # 外部pyファイル
-sys.path.append('../functions/')
+sys.path.append('https://github.com/meg-github/hatena_gui_ant/tree/main/functions/')
 import scrape_user_comment
 import analyze_user
 import analyze_bookmark_janome
