@@ -33,8 +33,8 @@ st.markdown(markdown)
 st.subheader("タスク画面の説明")
 st.write("タブ：「タスク1」「タスク2」を開くと、以下のような画面が表示されます。"
 "画面の構成は以下のようになっています。")
-image = Image.open('https://static.streamlit.io/examples/owl.jpg')
-st.image(image, caption='画面構成',use_column_width="auto")
+image = 
+st.image("https://static.streamlit.io/examples/owl.jpg", caption='画面構成',use_column_width="auto")
 "①：ニュース記事のタイトルです。クリックすることで記事内容を確認することができます。"
 "②：ニュース記事の本文です。記事内容をお読みいただいた上で質問に回答してください。"
 "③：ニュース記事につけられたコメントの一覧です。コメントは10件ずつ表示されています。左下の「＜」「＞」ボタンで11件目以降のコメントを見ることができます。"
