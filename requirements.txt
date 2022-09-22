@@ -6,7 +6,6 @@ requests==2.28.1
 streamlit==1.11.0
 streamlit-aggrid==0.2.3
 
-https://raw.githubusercontent.com/meg-github/hatena_gui_ant/main/ant/functions/scrape_user_comment.py
-https://raw.githubusercontent.com/meg-github/hatena_gui_ant/main/ant/functions/analyze_user.py
-https://raw.githubusercontent.com/meg-github/hatena_gui_ant/main/ant/functions/analyze_bookmark_janome.py
-
+ant/functions/analyze_bookmark_janome.py
+ant/functions/scrape_user_comment.py
+ant/functions/analyze_user.py
