@@ -17,7 +17,6 @@ def scrape(user,pages):
 	if not os.path.isfile(filepath):
 		result = open(filepath, mode='w')
 		dynamic_url = home + user + "/bookmark?page="
-		st.write(dynamic_url)
 		flag = 1
 
 		for i in range(int(pages)):
