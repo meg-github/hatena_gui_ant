@@ -17,7 +17,7 @@ import functions.analyze_bookmark_janome
 def func_user_analysis(username):
 	scrape_user_comment.scrape(username,3)#コメントのスクレイピング
 	comments_user = analyze_user.analyze_usr(username)#感情値の算出
-	df_user = pd.read_table('../result/'+username, names=["id","url","title","comment"],usecols=["title","comment"])
+	df_user = pd.read_table('./result/'+username, names=["id","url","title","comment"],usecols=["title","comment"])
 	# 各列の幅を'px'や'em'単位で微調整する
 	gridoptions = func_aggrids_user(df_user)
 	table = AgGrid(df_user,	gridOptions=gridoptions,fit_columns_on_grid_load=True)
@@ -56,8 +56,8 @@ def func_aggrids_user(df):
 # -----------------
 
 
-kijilist = pd.read_csv('../data_kiji/kijilist.csv', header=0)
-sentdata = pd.read_csv('../data_kiji/list_sentdata.csv', header=0,dtype=str)
+kijilist = pd.read_csv('./data_kiji/kijilist.csv', header=0)
+sentdata = pd.read_csv('./data_kiji/list_sentdata.csv', header=0,dtype=str)
 target_kiji = kijilist[kijilist['uri']=="https://www3.nhk.or.jp/news/html/20220902/k10013799531000.html"]
 target_sentdata = sentdata[sentdata['title'].isin(target_kiji['title'])]
 title = target_kiji["title"].tolist()[0]
@@ -70,7 +70,7 @@ with st.expander(title):
 	# st.text('感情語の割合: '+sent.sent_total.values+
 	# 	' ポジティブな語の割合: '+sent.sent_p.values+
 	# 	' ネガティブな語の割合: '+sent.sent_n.values)
-	with open('../data_kiji/'+str(title), "rb") as comments:
+	with open('./data_kiji/'+str(title), "rb") as comments:
 		commentlist = pickle.load(comments)
 		# for key,value in zip(commentlist.keys(),commentlist.values()):
 			# st.write(key+":"+value)
