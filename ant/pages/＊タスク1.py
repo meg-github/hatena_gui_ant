@@ -9,9 +9,9 @@ import pickle
 import collections
 
 # # 外部pyファイル
-import ../functions/scrape_user_comment
-import ../functions/analyze_user
-import ../functions/analyze_bookmark_janome
+import ..functions.scrape_user_comment
+import ..functions.analyze_user
+import ..functions.analyze_bookmark_janome
 # --------functions---------
 
 def func_user_analysis(username):
