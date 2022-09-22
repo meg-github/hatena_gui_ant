@@ -13,7 +13,7 @@ import os
 def scrape(user,pages):
 	home = "https://b.hatena.ne.jp/"
 # ユーザのブコメを取得するメソッド
-	filepath = "../result/"+user
+	filepath = "./result/"+user
 	if not os.path.isfile(filepath):
 		result = open(filepath, mode='w')
 		dynamic_url = home + user + "/bookmark?page="

@@ -7,9 +7,9 @@ from janome.tokenizer import Tokenizer
 
 # username = sys.argv[1]
 def analyze_usr(name):
-	comment_orgn = open('../result/'+name,mode='r')
-	dict_orgn = open('../dict/dict_inui',mode="r")
-	dict_orgn2 = open('../dict/dict_inui2',mode="r")
+	comment_orgn = open('./result/'+name,mode='r')
+	dict_orgn = open('./dict/dict_inui',mode="r")
+	dict_orgn2 = open('./dict/dict_inui2',mode="r")
 
 	comments = csv.reader(comment_orgn, delimiter='\t')
 	dic = csv.reader(dict_orgn, delimiter = '\t')

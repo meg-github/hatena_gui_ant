@@ -18,8 +18,8 @@ def analyze_b(url,opt):
 	print(str(j['title'])+' '+str(j['count'])+'bookmarks')
 
 	# -----辞書の準備-------
-	dict_orgn = open('../dict/dict_inui',mode="r")
-	dict_orgn2 = open('../dict/dict_inui2',mode="r")
+	dict_orgn = open('./dict/dict_inui',mode="r")
+	dict_orgn2 = open('./dict/dict_inui2',mode="r")
 	dic = csv.reader(dict_orgn, delimiter = '\t')
 	dic2 = csv.reader(dict_orgn2, delimiter = '\t')
 
