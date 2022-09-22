@@ -6,6 +6,6 @@ requests==2.28.1
 streamlit==1.11.0
 streamlit-aggrid==0.2.3
 
-git+https://github.com/meg-github/hatena_gui_ant/blob/0aea1b7e2413464ab3d9611d0a32e1202105daf1/ant/functions/scrape_user_comment.py
-git+https://github.com/meg-github/hatena_gui_ant/blob/0aea1b7e2413464ab3d9611d0a32e1202105daf1/ant/functions/analyze_user.py
-git+https://github.com/meg-github/hatena_gui_ant/blob/0aea1b7e2413464ab3d9611d0a32e1202105daf1/ant/functions/analyze_bookmark_janome.py
+git+https://raw.githubusercontent.com/meg-github/hatena_gui_ant/blob/0aea1b7e2413464ab3d9611d0a32e1202105daf1/ant/functions/scrape_user_comment.py
+git+https://raw.githubusercontent.com/meg-github/hatena_gui_ant/blob/0aea1b7e2413464ab3d9611d0a32e1202105daf1/ant/functions/analyze_user.py
+git+https://raw.githubusercontent.com/meg-github/hatena_gui_ant/blob/0aea1b7e2413464ab3d9611d0a32e1202105daf1/ant/functions/analyze_bookmark_janome.py
