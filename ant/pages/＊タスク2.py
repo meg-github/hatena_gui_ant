@@ -99,5 +99,5 @@ if table:
 
 
 st.components.v1.html(
-'<iframe width="95%" src="https://docs.google.com/forms/d/e/1FAIpQLScezCAj9ju9SYZKEFzbykPJpWu4WU_QwMfMhyTF-fJ-6YpKQA/viewform?embedded=true" width="640" height="2000" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>'
+'<iframe width="95%" src="https://docs.google.com/forms/d/e/1FAIpQLScf5UnwIAeTHno8LrVhZjbDaao51crK5jFOOo9RR35Ct0YkAg/viewform?embedded=true" width="640" height="2000" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>'
 ,height = 2000)
