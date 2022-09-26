@@ -54,7 +54,8 @@ def func_aggrids_user(df):
 	return(gridoptions)
 
 # -----------------
-
+st.header("タスク2")
+"以下の記事を読んで，ページ下部の質問に回答してください．"
 
 kijilist = pd.read_csv('./data_kiji/kijilist.csv', header=0)
 sentdata = pd.read_csv('./data_kiji/list_sentdata.csv', header=0,dtype=str)
@@ -94,3 +95,9 @@ if table:
 		st.write("ユーザー名:"+table["selected_rows"][0]["User"]+"のコメントリスト")
 		selected_user = str(selected_rows[0]["User"])
 		func_user_analysis(selected_user)
+
+
+
+st.components.v1.html(
+'<iframe width="95%" src="https://docs.google.com/forms/d/e/1FAIpQLScezCAj9ju9SYZKEFzbykPJpWu4WU_QwMfMhyTF-fJ-6YpKQA/viewform?embedded=true" width="640" height="2000" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>'
+,height = 2000)
