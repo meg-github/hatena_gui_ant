@@ -22,14 +22,14 @@ def func_user_analysis(username):
 	gridoptions = func_aggrids_user(df_user)
 	table = AgGrid(df_user,	gridOptions=gridoptions,fit_columns_on_grid_load=True)
 
-	st.write('感情語の割合: '+str(comments_user[0])+' ポジティブな語の割合: '+str(comments_user[1])+' ネガティブな語の割合: '+str(comments_user[2]))
+	st.write('コメントに含まれる感情語の割合（％）: '+str(comments_user[0])+' ポジティブな語の割合（％）: '+str(comments_user[1])+' ネガティブな語の割合（％）: '+str(comments_user[2]))
 	# st.write("ワードランキング:"+str(comments_user[3]))
 
 
 def func_dataframe(url,opt):#感情割合の算出（描画含む）とユーザ，コメントリストの構築
 	result_bookmark = analyze_bookmark_janome.analyze_b(url,opt)
 	print(result_bookmark)
-	result_abst = '感情語の割合: '+str(result_bookmark[0])+' ポジティブな語の割合: '+str(result_bookmark[1])+' ネガティブな語の割合: '+str(result_bookmark[2])
+	result_abst = 'コメントに含まれる感情語の割合（％）: '+str(result_bookmark[0])+' ポジティブな語の割合（％）: '+str(result_bookmark[1])+' ネガティブな語の割合（％）: '+str(result_bookmark[2])
 	df_baseline = pd.DataFrame({
 		"User":result_bookmark[3].keys(),
 		"Comment":result_bookmark[3].values()
