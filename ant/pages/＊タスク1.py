@@ -30,10 +30,11 @@ def func_dataframe(url,opt):#感情割合の算出（描画含む）とユーザ
 	result_bookmark = analyze_bookmark_janome.analyze_b(url,opt)
 	print(result_bookmark)
 	result_abst = 'コメント中に含まれる感情語（％）: '+str(result_bookmark[0])+' ポジティブな語（％）: '+str(result_bookmark[1])+' ネガティブな語（％）: '+str(result_bookmark[2])
-	df_baseline = pd.DataFrame({
+	df_baseline_orgn = pd.DataFrame({
 		"User":result_bookmark[3].keys(),
 		"Comment":result_bookmark[3].values()
 		})
+	df_baseline = df_baseline_orgn.sample(frac=1)
 	st.write(result_abst)
 	return(df_baseline)
 
@@ -75,10 +76,12 @@ with st.expander(title):
 		commentlist = pickle.load(comments)
 		# for key,value in zip(commentlist.keys(),commentlist.values()):
 			# st.write(key+":"+value)
-		df_commentlist = pd.DataFrame({
+		df_commentlist_orgn = pd.DataFrame({
 			"User":commentlist.keys(),
 			"Comment":commentlist.values()
 		})
+		df_commentlist = df_commentlist_orgn.sample(frac=1)
+
 		# sentidata_comment = analyze_text_janome.analyze(list(df_commentlist["Comment"]))
 		# st.write('感情語の割合: '+str(sentidata_comment[0])+' ポジティブな語の割合: '+str(sentidata_comment[1])+' ネガティブな語の割合: '+str(sentidata_comment[2]))
 
