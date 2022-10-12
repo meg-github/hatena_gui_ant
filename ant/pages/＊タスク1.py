@@ -76,11 +76,11 @@ with st.expander(title):
 		commentlist = pickle.load(comments)
 		# for key,value in zip(commentlist.keys(),commentlist.values()):
 			# st.write(key+":"+value)
-		df_commentlist_orgn = pd.DataFrame({
+		df_commentlist = pd.DataFrame({
 			"User":commentlist.keys(),
 			"Comment":commentlist.values()
 		})
-		df_commentlist = df_commentlist_orgn.sample(frac=1)
+		# df_commentlist = df_commentlist_orgn.sample(frac=1)
 
 		# sentidata_comment = analyze_text_janome.analyze(list(df_commentlist["Comment"]))
 		# st.write('感情語の割合: '+str(sentidata_comment[0])+' ポジティブな語の割合: '+str(sentidata_comment[1])+' ネガティブな語の割合: '+str(sentidata_comment[2]))
