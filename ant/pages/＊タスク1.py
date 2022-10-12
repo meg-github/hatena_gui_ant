@@ -80,7 +80,8 @@ with st.expander(title):
 			"User":commentlist.keys(),
 			"Comment":commentlist.values()
 		})
-		st.session_state.df_commentlist = df_commentlist_orgn.sample(frac=1)
+		if df.session_state not in st.session_state:
+			st.session_state.df_commentlist = df_commentlist_orgn.sample(frac=1)
 
 		# sentidata_comment = analyze_text_janome.analyze(list(df_commentlist["Comment"]))
 		# st.write('感情語の割合: '+str(sentidata_comment[0])+' ポジティブな語の割合: '+str(sentidata_comment[1])+' ネガティブな語の割合: '+str(sentidata_comment[2]))
