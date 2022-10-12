@@ -76,7 +76,7 @@ with st.expander(title):
 		commentlist = pickle.load(comments)
 		# for key,value in zip(commentlist.keys(),commentlist.values()):
 			# st.write(key+":"+value)
-		df_commentlist = pd.DataFrame({
+		df_commentlist_orgn = pd.DataFrame({
 			"User":commentlist.keys(),
 			"Comment":commentlist.values()
 		})
