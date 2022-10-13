@@ -21,7 +21,6 @@ def func_user_analysis(username):
 	# 各列の幅を'px'や'em'単位で微調整する
 	gridoptions = func_aggrids_user(df_user)
 	table = AgGrid(df_user,	gridOptions=gridoptions,fit_columns_on_grid_load=True)
-	status = "解析完了"
 	st.write('コメント中に含まれる感情語（％）: '+str(comments_user[0])+' ポジティブな語（％）: '+str(comments_user[1])+' ネガティブな語（％）: '+str(comments_user[2]))
 	# st.write("ワードランキング:"+str(comments_user[3]))
 
@@ -96,11 +95,11 @@ with st.expander(title):
 if table:
 	selected_rows = table["selected_rows"]
 	if selected_rows:
-		status = "解析中…"
+		st.write("解析中…")
 		st.write("ユーザー名:"+table["selected_rows"][0]["User"]+"のコメントリスト")
 		selected_user = str(selected_rows[0]["User"])
-		st.text(status)
 		func_user_analysis(selected_user)
+		st.write("解析完了")
 
 
 st.components.v1.html(
