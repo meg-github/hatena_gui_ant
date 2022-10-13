@@ -15,7 +15,6 @@ import functions.analyze_bookmark_janome as analyze_bookmark_janome
 # --------functions---------
 
 def func_user_analysis(username):
-	st.session_state.status = "解析中…"
 	scrape_user_comment.scrape(username,3)#コメントのスクレイピング
 	comments_user = analyze_user.analyze_usr(username)#感情値の算出
 	df_user = pd.read_table('./result/'+username, names=["id","url","title","comment"],usecols=["title","comment"])
@@ -96,7 +95,8 @@ with st.expander(title):
 if table:
 	selected_rows = table["selected_rows"]
 	if selected_rows:
-		stat = st.write(st.session_state.status)
+		st.session_state.status = "解析中…"
+		st.write(st.session_state.status)
 		st.write("ユーザー名:"+table["selected_rows"][0]["User"]+"のコメントリスト")
 		selected_user = str(selected_rows[0]["User"])
 		func_user_analysis(selected_user)
