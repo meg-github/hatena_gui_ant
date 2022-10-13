@@ -95,11 +95,12 @@ with st.expander(title):
 if table:
 	selected_rows = table["selected_rows"]
 	if selected_rows:
-		st.write("解析中…")
+		status = "解析中…"
+		st.write(status)
 		st.write("ユーザー名:"+table["selected_rows"][0]["User"]+"のコメントリスト")
 		selected_user = str(selected_rows[0]["User"])
 		func_user_analysis(selected_user)
-		st.write("解析完了")
+		status = "解析完了"
 
 
 st.components.v1.html(
