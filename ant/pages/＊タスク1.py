@@ -79,7 +79,7 @@ with st.expander(title):
 			"User":commentlist.keys(),
 			"Comment":commentlist.values()
 		})
-		if "df_commentlist" not in st.session_state:
+		if "df_commentlist_task1" not in st.session_state:
 			st.session_state.df_commentlist_task1 = df_commentlist_orgn.sample(frac=1)
 
 		# sentidata_comment = analyze_text_janome.analyze(list(df_commentlist["Comment"]))
