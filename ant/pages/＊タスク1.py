@@ -13,6 +13,7 @@ import functions.scrape_user_comment as scrape_user_comment
 import functions.analyze_user as analyze_user
 import functions.analyze_bookmark_janome as analyze_bookmark_janome
 # --------functions---------
+st.session_state.df_commentlist = null
 
 def func_user_analysis(username):
 	scrape_user_comment.scrape(username,3)#コメントのスクレイピング
