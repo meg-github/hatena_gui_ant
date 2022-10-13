@@ -13,7 +13,6 @@ import functions.scrape_user_comment as scrape_user_comment
 import functions.analyze_user as analyze_user
 import functions.analyze_bookmark_janome as analyze_bookmark_janome
 # --------functions---------
-st.session_state.df_commentlist = None
 
 def func_user_analysis(username):
 	scrape_user_comment.scrape(username,3)#コメントのスクレイピング
@@ -81,13 +80,13 @@ with st.expander(title):
 			"Comment":commentlist.values()
 		})
 		if "df_commentlist" not in st.session_state:
-			st.session_state.df_commentlist = df_commentlist_orgn.sample(frac=1)
+			st.session_state.df_commentlist_task1 = df_commentlist_orgn.sample(frac=1)
 
 		# sentidata_comment = analyze_text_janome.analyze(list(df_commentlist["Comment"]))
 		# st.write('感情語の割合: '+str(sentidata_comment[0])+' ポジティブな語の割合: '+str(sentidata_comment[1])+' ネガティブな語の割合: '+str(sentidata_comment[2]))
 
-		gridoptions = func_aggrids_bookmarks(st.session_state.df_commentlist)
-		table = AgGrid(st.session_state.df_commentlist,	gridOptions=gridoptions,
+		gridoptions = func_aggrids_bookmarks(st.session_state.df_commentlist_task1)
+		table = AgGrid(st.session_state.df_commentlist_task1,gridOptions=gridoptions,
 										fit_columns_on_grid_load=True,
 										data_return_mode=DataReturnMode.AS_INPUT,
 										update_mode=GridUpdateMode.SELECTION_CHANGED)
