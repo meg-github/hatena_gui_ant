@@ -15,6 +15,7 @@ import functions.analyze_bookmark_janome as analyze_bookmark_janome
 # --------functions---------
 
 def func_user_analysis(username):
+	status = "解析中…"
 	if "stat" in locals():
 		del stat
 	stat = st.write(status)
@@ -98,11 +99,12 @@ with st.expander(title):
 if table:
 	selected_rows = table["selected_rows"]
 	if selected_rows:
-		status = "解析中…"
 		st.write("ユーザー名:"+table["selected_rows"][0]["User"]+"のコメントリスト")
 		selected_user = str(selected_rows[0]["User"])
 		func_user_analysis(selected_user)
 		status = "解析完了"
+		if "stat" in locals():
+			del stat
 		stat = st.write(status)
 
 
