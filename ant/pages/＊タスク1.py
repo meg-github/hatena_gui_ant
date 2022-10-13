@@ -27,6 +27,10 @@ def func_user_analysis(username):
 	table = AgGrid(df_user,	gridOptions=gridoptions,fit_columns_on_grid_load=True)
 	st.write('コメント中に含まれる感情語（％）: '+str(comments_user[0])+' ポジティブな語（％）: '+str(comments_user[1])+' ネガティブな語（％）: '+str(comments_user[2]))
 	# st.write("ワードランキング:"+str(comments_user[3]))
+	status = "解析完了"
+	if "stat" in locals():
+		del stat
+	stat = st.write(status)
 
 
 def func_dataframe(url,opt):#感情割合の算出（描画含む）とユーザ，コメントリストの構築
@@ -102,10 +106,6 @@ if table:
 		st.write("ユーザー名:"+table["selected_rows"][0]["User"]+"のコメントリスト")
 		selected_user = str(selected_rows[0]["User"])
 		func_user_analysis(selected_user)
-		status = "解析完了"
-		if "stat" in locals():
-			del stat
-		stat = st.write(status)
 
 
 
