@@ -102,8 +102,6 @@ if table:
 		st.write("ユーザー名:"+table["selected_rows"][0]["User"]+"のコメントリスト")
 		selected_user = str(selected_rows[0]["User"])
 		func_user_analysis(selected_user)
-		if "stat" in locals():
-			del stat
 		status = "解析完了"
 		stat = st.write(status)
 
