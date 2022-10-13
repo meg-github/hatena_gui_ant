@@ -99,7 +99,7 @@ if table:
 		status = "解析中…"
 		st.write("ユーザー名:"+table["selected_rows"][0]["User"]+"のコメントリスト")
 		selected_user = str(selected_rows[0]["User"])
-		st.write(str(status))
+		st.text(status)
 		func_user_analysis(selected_user)
 
 
