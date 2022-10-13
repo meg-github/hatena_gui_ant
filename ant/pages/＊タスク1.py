@@ -101,6 +101,7 @@ if table:
 		selected_user = str(selected_rows[0]["User"])
 		func_user_analysis(selected_user)
 		st.session_state.status = "解析完了"
+		st.write(st.session_state.status)
 
 
 
