@@ -15,10 +15,7 @@ import functions.analyze_bookmark_janome as analyze_bookmark_janome
 # --------functions---------
 
 def func_user_analysis(username):
-	status = "解析中…"
-	if "stat" in locals():
-		del stat
-	stat = st.write(status)
+	st.session_state.status = "解析中…"
 	scrape_user_comment.scrape(username,3)#コメントのスクレイピング
 	comments_user = analyze_user.analyze_usr(username)#感情値の算出
 	df_user = pd.read_table('./result/'+username, names=["id","url","title","comment"],usecols=["title","comment"])
@@ -27,11 +24,7 @@ def func_user_analysis(username):
 	table = AgGrid(df_user,	gridOptions=gridoptions,fit_columns_on_grid_load=True)
 	st.write('コメント中に含まれる感情語（％）: '+str(comments_user[0])+' ポジティブな語（％）: '+str(comments_user[1])+' ネガティブな語（％）: '+str(comments_user[2]))
 	# st.write("ワードランキング:"+str(comments_user[3]))
-	status = "解析完了"
-	if "stat" in locals():
-		del stat
-	stat = st.write(status)
-
+	
 
 def func_dataframe(url,opt):#感情割合の算出（描画含む）とユーザ，コメントリストの構築
 	result_bookmark = analyze_bookmark_janome.analyze_b(url,opt)
@@ -103,9 +96,12 @@ with st.expander(title):
 if table:
 	selected_rows = table["selected_rows"]
 	if selected_rows:
+		stat = st.write(st.session_state.status)
 		st.write("ユーザー名:"+table["selected_rows"][0]["User"]+"のコメントリスト")
 		selected_user = str(selected_rows[0]["User"])
 		func_user_analysis(selected_user)
+		st.session_state.status = "解析完了"
+
 
 
 
