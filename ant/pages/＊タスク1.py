@@ -15,7 +15,7 @@ import functions.analyze_bookmark_janome as analyze_bookmark_janome
 # --------functions---------
 
 def func_user_analysis(username):
-	if stat in locals():
+	if "stat" in locals():
 		del stat
 	stat = st.write(status)
 	scrape_user_comment.scrape(username,3)#コメントのスクレイピング
@@ -102,7 +102,7 @@ if table:
 		st.write("ユーザー名:"+table["selected_rows"][0]["User"]+"のコメントリスト")
 		selected_user = str(selected_rows[0]["User"])
 		func_user_analysis(selected_user)
-		if stat in locals():
+		if "stat" in locals():
 			del stat
 		status = "解析完了"
 		stat = st.write(status)
