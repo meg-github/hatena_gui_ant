@@ -79,7 +79,7 @@ with st.expander(title):
 		df_commentlist_orgn = pd.DataFrame({
 			"User":commentlist.keys(),
 			"Comment":commentlist.values()
-		}).head(30)
+		})
 		if "df_commentlist_task2" not in st.session_state:
 			st.session_state.df_commentlist_task2 = df_commentlist_orgn.sample(frac=1)
 			
